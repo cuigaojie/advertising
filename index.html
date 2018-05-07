@@ -67,6 +67,13 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 .er_more img{width: 7.34rem;}
 .footer{width: 7rem;margin: 0 auto;background-image: url(img/foot.png);height: 1.22rem;background-size: cover;}
 .footer img{width: 1.17rem;height: 1.17rem;margin-left: 4rem;}
+.mask{position: fixed;bottom: 0;left: 0;top: 0;background-color: rgba(0, 0, 0, 0.7); height: 100%;width: 100%;z-index: 20;/*display: none;*/}
+.pop_up{position: fixed;width: 5rem;height: 6rem;left:50%;top: 50%;margin-left: -2.5rem;text-align: center;    margin-top: -3rem;background-color: #fff; display: none;z-index: 999;}
+.pop_up p{font-size: 0.64rem;color: #171717;text-align: center;border-bottom: 1px solid #c8c8c8;line-height: 1.6rem;margin-top: .4rem;}
+.pop_up img{ width: 1.3rem; height: 1.3rem;margin: 0.4rem auto 0;}
+.call{width: 3rem;height: .8rem;line-height: .8rem;text-align: center;font-size: .35rem;margin: .2rem auto;background-color: #205cbc;border-radius: .1rem;}
+.call a{color: #fff;}
+.tip img{width: 100%;z-index: 999;position: fixed;top: 0;left: 0;/*display: none;*/}
 </style>
 <body>
 	<div class="bgimg">
@@ -81,27 +88,34 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 		<div class="select"><div class="btn_more">查看更多车型</div><div class="btn_down">下载APP</div></div>
 		<div class="sildedown">下滑查看二手车买卖 <b>免费</b>置换、评估</div>
 		<div class="new_more"></div>
-		<div class="fixed"><span><img src="img/lianxi.png" alt="" /></span></div>	
+		<div class="fixed"><span class="call_phone"><img src="img/lianxi.png" alt="" /></span></div>	
 		<div class="er_more "><img src="img/maimai.png" alt="" /></div>
 		<div class="er_zhi "><img src="img/hsl@2x.png" alt="" /></div>
 			<div class="bgform bgform2">
 			<h2 class="put">预留手机号</h2>
-			<div class="form1"><span>姓名:</span><div class="form2"><input type="text" placeholder="请输入你的姓名"/></div></div>
-			<div class="form1"><span>手机号:</span><div class="form2"><input type="text" placeholder="请输入你的手机号"/></div></div>
+			<div class="form1"><span>姓名:</span><div class="form2"><input type="text" placeholder="请输入你的姓名"  class="name"/></div></div>
+			<div class="form1"><span>手机号:</span><div class="form2"><input type="text" placeholder="请输入你的手机号"  class="phone"/></div></div>
 			<div class="btn1" data-status="2"></div>
 			<p class="success">预留成功我们会有专业的客服人员与您进行沟通、介绍</p>
 		</div>
 		<div class="select"><div class="btn_more">查看更多车型</div><div class="btn_down">下载APP</div></div>
+		<div class="mask"></div>
+		<div class="pop_up">
+			<p>17339615551</p>
+			<img src="img/hua.png" alt="" />
+			<div class="call"><a href="tel:17339615551">呼叫</a></div>
+		</div>
 		<div class="footer">
-			<img src="img/ewm.jpg" alt="" />
+			<img src="img/925485@2x.png" alt="" />
+		</div>
+		<div class="tip">
+			<img src="img/tip.png" alt="" />
 		</div>
 	</div>
 </body>
 <script src="js/jquery1.9.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/layerMobile/layer.js" type="text/javascript" charset="utf-8"></script>
-<script src="http://192.168.8.18:8080/target/target-script-min.js#anonymous" type="text/javascript" charset="utf-8"></script>
 <script>
-//	javascript:(function(e){e.setAttribute("src","http://192.168.8.18:8080/target/target-script-min.js#anonymous");document.getElementsByTagName("body")[0].appendChild(e);})(document.createElement("script"));void(0);
 	var url="http://39.106.67.47/butler_car/index.php/";
 	var name="";
 	var telephone="";
@@ -113,31 +127,27 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 	     return{
             init:function(){
            	this.submit();    
-           	 
+           	this.call();
 	        },
 	        ajax:function(status){	        
 	        	$.ajax({
 					type:"post",
 					url:url+"Newpc/order/order_list",
-					data:{status:status,name:name, telephone:telephone,},
-					
-					success:function(data){
-						 if(data.code == 200){
-//						 	console.log(data)
-	                         layer.open({
-								  content: data.result,skin: 'msg',time:1.5 //2秒后自动关闭
-							  });
-	                	}else{ 
-//	                		console.log(data)
-	                      layer.open({	                      	
-	                          content: data.result,skin: 'msg',time:1.5 //2秒后自动关闭
-	                      });
-                    }
+					data:{status:status,name:name, telephone: telephone,},					
+					success:function(data){   
+                      layer.open({
+                          content: '预约成功',skin: 'msg',time:1.5 //2秒后自动关闭
+                      });
+					},
+					error:function(data){
+						layer.open({
+                          content: '请求出错',skin: 'msg',time:1.5 //2秒后自动关闭
+                      });
 					}
 				});
 	        },
 	        submit:function(status){
-	        	$(".btn1").click(function(){
+	        	$(".bgform .btn1").click(function(){
 	        	 status=$(this).attr("data-status");
 	        	 name=$(this).parents(".bgform ").find(".name").val().replace(/\s/g, "");
 	        	 telephone=$(this).parents(".bgform ").find(".phone").val().replace(/\s/g, ""); 
@@ -160,6 +170,18 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 	        	 
 	        	})	        	     		  
 	        },
+	        call:function(){
+	        	$(".call_phone").click(function(){
+	        		$(".mask").show();
+	        		$(".pop_up").show();
+	        	    $("body,html").css("overflow","hidden")
+	        	})
+	        	$(".mask").click(function(){
+	        		$(this).hide();
+	        		$(".pop_up").hide();
+	        		 $("body,html").css("overflow","auto")
+	        	})
+	        }
 	      	
 	        
 	    } 
@@ -192,17 +214,22 @@ function downloadApp(){
 	  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
 	 if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信内置浏览器
 		  $(".btn_down").click(function(){		  	
-		   window.location.href="https://itunes.apple.com/app/id1330301595";//ios/微信内置浏览器
-		  }); 
+		    $(".mask").show();
+	        $(".tip").show();
+	        $("body,html").css("overflow","hidden")
+	      })
+    	$(".mask").click(function(){
+    		$(this).hide();
+    		$(".tip").hide();
+    		 $("body,html").css("overflow","auto")
+    	})
 		 }else{
 		  if(isiOS){   	
 		   $(".btn_down").click(function(){	   
-//		   	console.log(1)
 		    window.location.href="https://itunes.apple.com/app/id1330301595";//ios
 		   });
 		  }else if(isAndroid){
 		   $(".btn_down").click(function(){	 
-//		   	 	console.log(2)
 		    window.location.href="http://www.gj2car.com/apk/car.apk"; 	//android 
 		   });
 		  }
