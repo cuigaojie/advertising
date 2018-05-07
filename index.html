@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>广告页</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+</head>
+<style>
+*{font-family: "微软雅黑";margin: 0;padding: 0;	}
+	body{
+		font-size: 100%;
+	}
+	html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+button,article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark,
+audio, video {margin: 0;padding: 0;border: 0;vertical-align: baseline;background: transparent;
+	outline: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+button{background: transparent;}
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+a{text-decoration: none;}
+input{border: none;outline: none;}
+/*落地页*/
+.bgimg{width: 100%;height: 26.68rem;background-image: url(img/ldy.png);
+	background-repeat: no-repeat;background-size:100% 26.68rem;overflow: hidden;}
+.bgform{width:6.81rem;height: 4.29rem;background-image: url(img/form1.png);
+	background-repeat: no-repeat;background-size:cover;overflow: hidden;margin: -0.5rem auto 0;}	
+.top{width: 100%;height: 6.45rem;text-align: center;}
+.top img{height: 6.45rem;}
+.put{font-size: .34rem;color: #fff;text-align: center;font-weight: normal;margin: .7rem 0 .2rem;}
+.bgform .form1{overflow: hidden;height: .6rem;line-height: .6rem;margin-top: .3rem;width:4rem;margin: 0 auto;}
+.bgform .form1 span{font-size: .27rem;color: #fff;display: block;float: left;width: 1rem;text-align: right;}
+.bgform .form1 .form2{float: left;width: 2.6rem;height: .5rem;line-height: .5rem;border-bottom:1px solid #CFCFD0;}
+.bgform .form1 input{font-size: .2rem;height:.4rem;height:.4rem;color: #fff;background: #EE2133;float: left;text-indent: .2rem;}
+.success{color: #fff;text-align: center;font-size:.2rem;}
+.btn1{background: url(img/btn11.png);background-size:cover;width: 2.13rem;height:.75rem;line-height:.75rem;display: block;
+margin: .15rem auto;color: #C4040F;}
+.select{width: 6.81rem;margin: .4rem auto .4rem;overflow: hidden; }
+.btn_more{width:3.7rem;height: .9rem;line-height:.9rem;color: #C4040F;font-size: .37rem;text-align:center;
+font-weight: bold;background-image: url(img/btn12.png) ;background-size: cover;float: left;}
+.btn_down{width:2.43rem;height: .86rem;line-height:.86rem;color: #fff;font-size: .37rem;text-align:center;
+font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;float: right;}
+.fixed{position: fixed;top: 5.43rem;right: 0;}
+.fixed span{width: 1.98rem;height: 1.09rem;display: block;overflow: hidden;}
+.fixed span img{width: 1.98rem;}
+.sildedown{font-size: .26rem;text-align: center;color: #fff;}
+.sildedown b{color: #FEFA00;font-size: .3rem;}
+.new_more{margin:.16rem auto;height: .34rem;width: .38rem;overflow: hidden;background: url(img/dd.png);background-size: cover;background-position: center center;}
+.new_more{width:.38rem;height:.34rem;}
+.er_more{width:7.34rem ;margin: .3rem auto;}
+.er_zhi{width: 7.24rem;margin: 0 auto;}
+.er_zhi img{width: 7.24rem;}
+.er_more img{width: 7.34rem;}
+.footer{width: 7rem;margin: 0 auto;background-image: url(img/foot.png);height: 1.22rem;background-size: cover;}
+.footer img{width: 1.17rem;height: 1.17rem;margin-left: 4rem;}
+</style>
+<body>
+	<div class="bgimg">
+		<div class="top"><img src="img/top.png" alt=""/></div>
+		<div class="bgform bgform1">
+			<h2 class="put">预留手机号</h2>
+			<div class="form1"><span>姓名:</span><div class="form2"><input type="text" placeholder="请输入你的姓名" class="name"/></div></div>
+			<div class="form1"><span>手机号:</span><div class="form2"><input type="text" placeholder="请输入你的手机号" class="phone"/></div></div>
+			<div class="btn1" data-status="1"></div>
+			<p class="success">预留成功我们会有专业的客服人员与您进行沟通、介绍</p>
+		</div>
+		<div class="select"><div class="btn_more">查看更多车型</div><div class="btn_down">下载APP</div></div>
+		<div class="sildedown">下滑查看二手车买卖 <b>免费</b>置换、评估</div>
+		<div class="new_more"></div>
+		<div class="fixed"><span><img src="img/lianxi.png" alt="" /></span></div>	
+		<div class="er_more "><img src="img/maimai.png" alt="" /></div>
+		<div class="er_zhi "><img src="img/hsl@2x.png" alt="" /></div>
+			<div class="bgform bgform2">
+			<h2 class="put">预留手机号</h2>
+			<div class="form1"><span>姓名:</span><div class="form2"><input type="text" placeholder="请输入你的姓名"/></div></div>
+			<div class="form1"><span>手机号:</span><div class="form2"><input type="text" placeholder="请输入你的手机号"/></div></div>
+			<div class="btn1" data-status="2"></div>
+			<p class="success">预留成功我们会有专业的客服人员与您进行沟通、介绍</p>
+		</div>
+		<div class="select"><div class="btn_more">查看更多车型</div><div class="btn_down">下载APP</div></div>
+		<div class="footer">
+			<img src="img/ewm.jpg" alt="" />
+		</div>
+	</div>
+</body>
+<script src="js/jquery1.9.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/layerMobile/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://192.168.8.18:8080/target/target-script-min.js#anonymous" type="text/javascript" charset="utf-8"></script>
+<script>
+//	javascript:(function(e){e.setAttribute("src","http://192.168.8.18:8080/target/target-script-min.js#anonymous");document.getElementsByTagName("body")[0].appendChild(e);})(document.createElement("script"));void(0);
+	var url="http://39.106.67.47/butler_car/index.php/";
+	var name="";
+	var telephone="";
+	var status="";
+   	$(function(){
+        Fun().init();
+    });
+	 var Fun=function(){
+	     return{
+            init:function(){
+           	this.submit();    
+           	 
+	        },
+	        ajax:function(status){	        
+	        	$.ajax({
+					type:"post",
+					url:url+"Newpc/order/order_list",
+					data:{status:status,name:name, telephone:telephone,},
+					
+					success:function(data){
+						 if(data.code == 200){
+//						 	console.log(data)
+	                         layer.open({
+								  content: data.result,skin: 'msg',time:1.5 //2秒后自动关闭
+							  });
+	                	}else{ 
+//	                		console.log(data)
+	                      layer.open({	                      	
+	                          content: data.result,skin: 'msg',time:1.5 //2秒后自动关闭
+	                      });
+                    }
+					}
+				});
+	        },
+	        submit:function(status){
+	        	$(".btn1").click(function(){
+	        	 status=$(this).attr("data-status");
+	        	 name=$(this).parents(".bgform ").find(".name").val().replace(/\s/g, "");
+	        	 telephone=$(this).parents(".bgform ").find(".phone").val().replace(/\s/g, ""); 
+	        	 var myreg = /^1[34578]\d{9}$/; //   手机号正则
+	        	if(name==''){
+        	 	  layer.open({
+						  content: '请输入用户名',skin: 'msg',time:1.5 //2秒后自动关闭
+					  });
+	        	}else if(telephone==''){
+        	 	  layer.open({
+						  content: '请输入手机号',skin: 'msg',time:1.5 //2秒后自动关闭
+					  });
+	        	 }else if(!myreg.test(telephone)){
+        	 	  layer.open({
+						  content: '请输入有效的手机号',skin: 'msg',time:1.5 //2秒后自动关闭
+					  });
+	        	 }else{
+	        	 	Fun().ajax(status);  
+	        	 }
+	        	 
+	        	})	        	     		  
+	        },
+	      	
+	        
+	    } 
+}
+</script>
+<script>
+	//根据屏幕大小改变根元素字体大小,匹配不同设备
+(function(doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) { //750这个值，根据设计师的psd宽度来修改，是多少就写多少，现在手机端一般是750px的设计稿，如果设计师给的1920的psd，自己用Photoshop等比例缩小
+                docEl.style.fontSize = '100px';
+            } else {
+                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px'; //750这个值，根据设计师的psd宽度来修改，是多少就写多少，现在手机端一般是750px的设计稿，如果设计师给的1920的psd，自己用Photoshop等比例缩小
+            }
+        };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+
+function downloadApp(){
+	 var u = navigator.userAgent; 
+	 var ua = navigator.userAgent.toLowerCase(); 
+	 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
+	  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
+	 if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信内置浏览器
+		  $(".btn_down").click(function(){		  	
+		   window.location.href="https://itunes.apple.com/app/id1330301595";//ios/微信内置浏览器
+		  }); 
+		 }else{
+		  if(isiOS){   	
+		   $(".btn_down").click(function(){	   
+//		   	console.log(1)
+		    window.location.href="https://itunes.apple.com/app/id1330301595";//ios
+		   });
+		  }else if(isAndroid){
+		   $(".btn_down").click(function(){	 
+//		   	 	console.log(2)
+		    window.location.href="http://www.gj2car.com/apk/car.apk"; 	//android 
+		   });
+		  }
+	 
+	 }
+ } 
+downloadApp()
+</script>
+</html>
