@@ -217,11 +217,13 @@ function downloadApp(){
 	 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
 	  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
 	 if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信内置浏览器
-	 	if (/iphone|ipad|ipod/.test(ua)) {
-		    	 window.location.href="https://itunes.apple.com/app/id1330301595";//ios
-		} else if (/android/.test(ua)) {
-			 window.location.href="http://www.gj2car.com/apk/car.apk"; 	//android 	
-		}
+	 	$(".btn_down").click(function(){		  	
+		   if (/iphone|ipad|ipod/.test(ua)) {
+			    window.location.href="https://itunes.apple.com/app/id1330301595";//ios
+			} else if (/android/.test(ua)) {
+				 window.location.href="http://www.gj2car.com/apk/car.apk"; 	//android 	
+		    }
+	      })
 //		  $(".btn_down").click(function(){		  	
 //		    $(".mask").show();
 //	        $(".tip").show();
@@ -232,8 +234,7 @@ function downloadApp(){
 //  		$(".tip").hide();
 //  		 $("body,html").css("overflow","auto")
 //  	})
-		 }else{
-		  if(isiOS){   	
+		 }else if(isiOS){   	
 		   $(".btn_down").click(function(){	   
 		    window.location.href="https://itunes.apple.com/app/id1330301595";//ios
 		   });
@@ -242,8 +243,8 @@ function downloadApp(){
 		    window.location.href="http://www.gj2car.com/apk/car.apk"; 	//android 
 		   });
 		  }
+      
 	 
-	 }
  } 
 downloadApp()
 </script>
