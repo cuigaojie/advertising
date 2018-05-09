@@ -105,6 +105,7 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 		<div class="pop_up">
 			<p>17737131319</p>
 			<img src="img/hua.png" alt="" />
+			<!-- <div class="call"><a href="tel:17339615551">呼叫</a></div> -->
 			<div class="call"><a href="tel:17737131319">呼叫</a></div>
 		</div>
 		<div class="footer">
@@ -212,19 +213,25 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 function downloadApp(){
 	 var u = navigator.userAgent; 
 	 var ua = navigator.userAgent.toLowerCase(); 
+	
 	 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
 	  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
 	 if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信内置浏览器
-		  $(".btn_down").click(function(){		  	
-		    $(".mask").show();
-	        $(".tip").show();
-	        $("body,html").css("overflow","hidden")
-	      })
-    	$(".mask").click(function(){
-    		$(this).hide();
-    		$(".tip").hide();
-    		 $("body,html").css("overflow","auto")
-    	})
+	 	if (/iphone|ipad|ipod/.test(ua)) {
+		    	 window.location.href="https://itunes.apple.com/app/id1330301595";//ios
+		} else if (/android/.test(ua)) {
+			 window.location.href="http://www.gj2car.com/apk/car.apk"; 	//android 	
+		}
+//		  $(".btn_down").click(function(){		  	
+//		    $(".mask").show();
+//	        $(".tip").show();
+//	        $("body,html").css("overflow","hidden")
+//	      })
+//  	$(".mask").click(function(){
+//  		$(this).hide();
+//  		$(".tip").hide();
+//  		 $("body,html").css("overflow","auto")
+//  	})
 		 }else{
 		  if(isiOS){   	
 		   $(".btn_down").click(function(){	   
