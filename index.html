@@ -87,7 +87,7 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 			<div class="btn1" data-status="1"></div>
 			<p class="success">预留成功我们会有专业的客服人员与您进行沟通、介绍</p>
 		</div>
-		<div class="select"><div class="btn_more"><a href="http://nm.gj2car.com/zz/shop">查看更多车型</a></div><div class="btn_down">下载APP</div></div>
+		<div class="select"><div class="btn_more"><a href="javascript:;" class="moreCar1">查看更多车型</a></div><div class="btn_down">下载APP</div></div>
 		<div class="sildedown">下滑查看二手车买卖 <b>免费</b>置换、评估</div>
 		<div class="new_more"></div>
 		<div class="fixed"><span class="call_phone"><img src="img/lianxi.png" alt="" /></span></div>	
@@ -100,7 +100,7 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 			<div class="btn1" data-status="2"></div>
 			<p class="success">预留成功我们会有专业的客服人员与您进行沟通、介绍</p>
 		</div>
-		<div class="select"><div class="btn_more"><a href="http://m.gj2car.com/zz/shop">查看更多车型</a></div><div class="btn_down">下载APP</div></div>
+		<div class="select"><div class="btn_more"><a href="javascript:;"  class="moreCar2">查看更多车型</a></div><div class="btn_down">下载APP</div></div>
 		<div class="mask"></div>
 		<div class="pop_up">
 			<p>17737131319</p>
@@ -173,17 +173,34 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 	        	 
 	        	})	        	     		  
 	        },
-	        call:function(){
-	        	$(".call_phone").click(function(){
-	        		$(".mask").show();
-	        		$(".pop_up").show();
-	        	    $("body,html").css("overflow","hidden")
-	        	})
-	        	$(".mask").click(function(){
-	        		$(this).hide();
-	        		$(".pop_up").hide();
-	        		 $("body,html").css("overflow","auto")
-	        	})
+	        call:function(){		  
+			  var sUserAgent = navigator.userAgent.toLowerCase();
+			  var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+			  var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+			  var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+			  var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+			  var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+			  var bIsAndroid = sUserAgent.match(/android/i) == "android";
+			  var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+			  var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+			 
+
+				$(".moreCar1").click(function(){
+				 if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+				    window.location.href='http://newcar.gj2car.com/zz/newcar_s';
+				  }else{
+				  	 window.location.href='http://nm.gj2car.com/zz/shop';
+				  }
+				})
+				$(".moreCar2").click(function(){
+					 if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+					    window.location.href='http://www.gj2car.com/zz/shop';
+					  }else{
+					  	 window.location.href='http://m.gj2car.com/zz/shop';
+					  }
+					
+				})
+
 	        }
 	      	
 	        
@@ -211,29 +228,19 @@ font-weight: bold;background-image: url(img/btn2.png) ;background-size: cover;fl
 })(document, window);
 
 function downloadApp(){
-	 var u = navigator.userAgent; 
-	 var ua = navigator.userAgent.toLowerCase(); 
-	
-	 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
-	  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
+	var u = navigator.userAgent; 
+	var ua = navigator.userAgent.toLowerCase(); 	
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
 	 if(ua.match(/MicroMessenger/i)=="micromessenger") { //微信内置浏览器
 	 	$(".btn_down").click(function(){		  	
 		   if (/iphone|ipad|ipod/.test(ua)) {
 			    window.location.href="https://itunes.apple.com/app/id1330301595";//ios
 			} else if (/android/.test(ua)) {
-				window.location.href="http://sj.qq.com/myapp/detail.htm?apkName=com.dlwx.stewardusedcars"; 	//android 	
+				 window.location.href="http://sj.qq.com/myapp/detail.htm?apkName=com.dlwx.stewardusedcars"; 	//android 	
 		    }
 	      })
-//		  $(".btn_down").click(function(){		  	
-//		    $(".mask").show();
-//	        $(".tip").show();
-//	        $("body,html").css("overflow","hidden")
-//	      })
-//  	$(".mask").click(function(){
-//  		$(this).hide();
-//  		$(".tip").hide();
-//  		 $("body,html").css("overflow","auto")
-//  	})
+
 		 }else if(isiOS){   	
 		   $(".btn_down").click(function(){	   
 		    window.location.href="https://itunes.apple.com/app/id1330301595";//ios
